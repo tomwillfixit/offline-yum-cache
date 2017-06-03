@@ -1,3 +1,5 @@
+![yum](img/yum.png)
+
 # Reducing build times with Multi Stage builds and yum caching
 
 As a Build Engineer I'm always looking for ways to make builds faster, reduce dependencies, reduce waste and increase resilience. 
