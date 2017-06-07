@@ -4,16 +4,10 @@
 
 # docker build -t devtools:latest -f Dockerfile.createcache .
 
-FROM centos:7 as dev_tool_cache 
+FROM centos:7
 
 #enable cache
 RUN sed -i 's/keepcache=0/keepcache=1/g' /etc/yum.conf
 
 #Download Development Tools
 RUN yum --setopt=group_package_types=mandatory,default,optional groupinstall -y "Development Tools"
-
-FROM alpine:3.6 
-
-COPY --from=dev_tool_cache /var/cache/yum/x86_64 /var/cache/yum/x86_64 
-
-RUN ls /var/cache/yum/x86_64/7
