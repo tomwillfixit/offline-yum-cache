@@ -2,12 +2,7 @@
 
 # Usage : time docker build -t devenv:latest -f Dockerfile.dev_env .
 
-# Uncomment next line and COPY line to use "Development Tools" cache
-#FROM devtools:centos7 as dev_tool_cache
-
-FROM centos:7 
-
-#COPY --from=dev_tool_cache /var/cache/yum/x86_64 /var/cache/yum/x86_64
+FROM devtools
 
 RUN echo "Setting up dev environment"
 
